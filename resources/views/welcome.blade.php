@@ -47,7 +47,7 @@ height: 4.625rem;
     margin: 0 auto;
     padding: 0 20px;
     height: 2.62rem;
-    width: calc(46.87rem - 1.625rem);
+    width: calc(600px - 1.625rem);
     background-color: var(--cor-fundo-post);
     border-radius: 15px;
     border: none;
@@ -62,9 +62,9 @@ height: 4.625rem;
   left: -40px;
 }
 .perfil_icon-bar{
-    width: 40px;
-    height: 40px;
-    border-radius: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     background-color: var(--cor-principal);
     margin-right: 8px
 }
@@ -76,7 +76,7 @@ height: 4.625rem;
 .perfil-icon-name{
     display: flex;
     align-items: center;
-    margin: 0 40px;
+    margin: 0 30px;
 }
 .perfil-icon-name a{
     text-decoration: none;
@@ -88,6 +88,47 @@ height: 4.625rem;
     height: calc(100vh - 4.625rem);
     width: 100%;
     background-color: var(--cor-fundo);
+}
+.logo_box{
+
+}
+.container{
+    display: grid;
+    grid-template-columns:auto 1fr auto ;
+}
+aside{
+    width: 300px;
+    /* background-color: red; */
+    height: calc(100vh - 4.625rem);
+}
+main{
+    background-color: green;
+}
+.notificacoes{
+    background-color: yellow;
+    width: 200px;
+    height: calc(100vh - 4.625rem);
+}
+.peril-icon-container{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--cor-principal);
+    margin-right: 8px
+}
+.content-aside{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.perfil-box{
+    display: flex;
+    align-items: center;
+}
+.perfil-box h4,h6{
+    color: var(--cor-color-1);
+}
+.perfil-text-container h4{
+    margin-bottom: 8px;
 }
 </style>
 <body>
@@ -148,9 +189,34 @@ height: 4.625rem;
     <div class="container">
         <aside>
             <div class="content-aside">
-
+                <div class="grops_menus">
+                    <div class="perfil">
+                        <div class="perfil-box">
+                            <div class="peril-icon-container"></div>
+                            <div class="perfil-text-container">
+                                <h4>Marco Ocram .N</h4>
+                                <h6>@M.ocram_N</h6>
+                            </div>
+                        </div>
+                        <div class="follows-data">
+                            
+                        </div>
+                    </div>
+                    <div class="menus"></div>
+                </div>
+                <div class="groups-books">CLUBE DO LIVRO</div>
+                <div class="groups-group">GRUPOS</div>
             </div>
+
         </aside>
+
+        <main>
+            MAIN
+        </main>
+
+        <div class="notificacoes">
+            notificacoes
+        </div>
     </div>
 </body>
 </html>
