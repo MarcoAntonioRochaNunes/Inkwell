@@ -20,6 +20,8 @@
         --cor-perfis: #747474;
         --cor-texto-post: #FFFFFF;
         --cor-color-1: #D5D7DC;
+        --cor-fundo-bloco-post: #242526;
+        --cor-detalhes: #2A2B2C;
 
 
         /*----------------------*/
@@ -29,6 +31,7 @@
     padding: 0;
     font-family: Montserrat, sans-serif;
     color: inherit;
+    text-decoration: none;
 
 }
 header{
@@ -97,24 +100,25 @@ height: 4.625rem;
     grid-template-columns:auto 1fr auto ;
 }
 aside{
-    width: 300px;
+    /* width: 300px; */
+    padding: 0 20px;
     /* background-color: red; */
     height: calc(100vh - 4.625rem);
 }
 main{
-    background-color: green;
+    /* background-color: green; */
 }
 .notificacoes{
-    background-color: yellow;
-    width: 200px;
+    width: 220px;
     height: calc(100vh - 4.625rem);
+
 }
 .peril-icon-container{
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: var(--cor-principal);
-    margin-right: 8px
+    margin-right: 8px;
 }
 .content-aside{
     margin-left: 30px;
@@ -129,6 +133,125 @@ main{
 }
 .perfil-text-container h4{
     margin-bottom: 8px;
+    font-size: 0.875rem;
+}
+.perfil-text-container h6{
+    font-family: Roboto serif,sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 0.75rem;
+    color: var(--cor-perfis);
+}
+.follow-box
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.follow-box h6{
+    color: var(--cor-principal);
+    font-weight: 600;
+    font-size: 0.75rem;
+
+}
+.follow-box h4{
+    color: var(--cor-perfis);
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+.btn-perfil{
+    border:none;
+    background-color: inherit;
+    padding: 10px 60px;
+    border: solid 1px var(--cor-color-1);
+    color: var(--cor-color-1);
+    font-weight: 600;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+nav ul{
+    list-style: none;
+    margin-top: 30px;
+}
+nav ul li{
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--cor-color-1);
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+nav ul li svg{
+    margin-right: 8px;
+}
+.btn_new-book{
+    border:none;
+    background-color: inherit;
+    padding: 10px 40px;
+    background-color: var(--cor-texto-post);
+    color: var(--cor-fundo);
+    font-weight: 600;
+    border-radius: 15px;
+    margin-top: 40px;
+    place-self: center;
+}
+.btn_new-book::before{
+    content: "";
+    display: flex;
+    width: 171px;
+    height: 1px;
+    background-color: var(--cor-detalhes);
+    position: absolute;
+    bottom: 50px;
+    left: 0px;
+}
+.notification-content{
+    width: 200px;
+    margin-top: 30px;
+}
+.notification-content h5{
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--cor-perfis);
+}
+.notification-box{
+    width: 200px;
+    height: 85px;
+    background-color: var(--cor-fundo-bloco-post);
+    border-radius: 15px;
+    margin-top: 20px;
+    display: flex;
+}
+.perfil_photo-notification{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--cor-perfis);
+    position: relative;
+    left: -7px;
+    top: -7px;
+}
+.text-content {
+    margin: 10px;
+    width: 65%;
+    word-break: break-all;
+}
+.text-content h6{
+    font-size: 14px;
+    font-weight: 400;
+}
+.text-content p{
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--cor-color-1);
+}
+.menus{
+    position: relative;
 }
 </style>
 <body>
@@ -198,14 +321,97 @@ main{
                                 <h6>@M.ocram_N</h6>
                             </div>
                         </div>
-                        <div class="follows-data">
-                            
+
+                        <div class="follow-box">
+                            <div class="followers">
+                                <h6>23633</h6>
+                                <h4>Seguidores</h4>
+                            </div>
+
+                            <div class="following" align="right">
+                                <h6>23633</h6>
+                                <h4>Seguindo</h4>
+                            </div>
                         </div>
+
+                        <button class="btn-perfil">
+                             Ver Perfil
+                        </button>
                     </div>
-                    <div class="menus"></div>
+
+                    <div class="menus">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0H18V18H0V0Z" fill="white" fill-opacity="0.01"/>
+                                            <path d="M3.375 6.75V15.75H14.625V6.75L9 2.25L3.375 6.75Z" fill="white" fill-opacity="0.01"/>
+                                            <path d="M3.375 15.75V6.75L1.5 8.25L9 2.25L16.5 8.25L14.625 6.75V15.75H3.375Z" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7.125 10.875V15.75H10.875V10.875H7.125Z" fill="#D5D7DC" stroke="white" stroke-opacity="0.01" stroke-width="1.61535" stroke-linejoin="round"/>
+                                            <path d="M3.375 15.75H14.625" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round"/>
+                                            </svg>
+                                            Home
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0.224487H16V16.2245H0V0.224487Z" fill="white" fill-opacity="0.01"/>
+                                            <path d="M7.00016 12.8912C10.1298 12.8912 12.6668 10.3541 12.6668 7.22453C12.6668 4.09493 10.1298 1.55786 7.00016 1.55786C3.87056 1.55786 1.3335 4.09493 1.3335 7.22453C1.3335 10.3541 3.87056 12.8912 7.00016 12.8912Z" fill="white" fill-opacity="0.01" stroke="#D5D7DC" stroke-width="1.61535" stroke-linejoin="round"/>
+                                            <path d="M8.88598 5.00564C8.40341 4.52308 7.73675 4.22461 7.00038 4.22461C6.26401 4.22461 5.59735 4.52308 5.11475 5.00564" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M11.0742 11.2985L13.9027 14.1269" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        Pesquisar
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0.224487H16V16.2245H0V0.224487Z" fill="white" fill-opacity="0.01"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00016 14.8912C11.6821 14.8912 14.6668 11.9064 14.6668 8.22453C14.6668 4.54263 11.6821 1.55786 8.00016 1.55786C4.31826 1.55786 1.3335 4.54263 1.3335 8.22453C1.3335 11.9064 4.31826 14.8912 8.00016 14.8912Z" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1.3335 8.22455H14.6668" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00016 14.8912C9.47293 14.8912 10.6668 11.9064 10.6668 8.22453C10.6668 4.54263 9.47293 1.55786 8.00016 1.55786C6.5274 1.55786 5.3335 4.54263 5.3335 8.22453C5.3335 11.9064 6.5274 14.8912 8.00016 14.8912Z" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M3.28613 3.60522C4.49256 4.81166 6.15923 5.55786 8.00016 5.55786C9.84113 5.55786 11.5078 4.81166 12.7142 3.60522" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12.7142 12.8438C11.5078 11.6374 9.84113 10.8912 8.00016 10.8912C6.15923 10.8912 4.49256 11.6374 3.28613 12.8438" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Explorar
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0.224487H16V16.2245H0V0.224487Z" fill="white" fill-opacity="0.01"/>
+                                            <path d="M2.6665 13.5578C2.6665 12.2245 2.6665 3.5578 2.6665 3.5578C2.6665 2.45323 3.62164 1.5578 4.79984 1.5578H13.3332V12.2245C13.3332 12.2245 6.66034 12.2245 4.79984 12.2245C3.12059 12.2245 2.6665 12.4525 2.6665 13.5578Z" fill="white" fill-opacity="0.01" stroke="#D5D7DC" stroke-width="1.61535" stroke-linejoin="round"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.99984 14.8912H13.3332V12.2245H3.99984C3.26346 12.2245 2.6665 12.8215 2.6665 13.5578C2.6665 14.2942 3.26346 14.8912 3.99984 14.8912Z" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Livros
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0.224487H16V16.2245H0V0.224487Z" fill="white" fill-opacity="0.01"/>
+                                            <path d="M2.6665 13.5578C2.6665 12.2245 2.6665 3.5578 2.6665 3.5578C2.6665 2.45323 3.62164 1.5578 4.79984 1.5578H13.3332V12.2245C13.3332 12.2245 6.66034 12.2245 4.79984 12.2245C3.12059 12.2245 2.6665 12.4525 2.6665 13.5578Z" fill="white" fill-opacity="0.01" stroke="#D5D7DC" stroke-width="1.61535" stroke-linejoin="round"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.99984 14.8912H13.3332V12.2245H3.99984C3.26346 12.2245 2.6665 12.8215 2.6665 13.5578C2.6665 14.2942 3.26346 14.8912 3.99984 14.8912Z" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Clube do Livro
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="19px" viewBox="0 -960 960 960" width="18px" fill="#D5D7DC"><path d="M411-480q-28 0-46-21t-13-49l12-72q8-43 40.5-70.5T480-720q44 0 76.5 27.5T597-622l12 72q5 28-13 49t-46 21H411Zm-287 39q-23 1-39.5-9T63-481q-2-9-1-18t5-17q0 1-1-4-2-2-10-24-2-12 3-23t13-19l2-2q2-19 15.5-32t33.5-13q3 0 19 4l3-1q5-5 13-7.5t17-2.5q11 0 19.5 3.5T208-626q1 0 1.5.5t1.5.5q14 1 24.5 8.5T251-596q2 7 1.5 13.5T250-570q0 1 1 4 7 7 11 15.5t4 17.5q0 4-6 21-1 2 0 4l2 16q0 21-17.5 36T202-441h-78Zm676 1q-33 0-56.5-23.5T720-520q0-12 3.5-22.5T733-563l-28-25q-10-8-3.5-20t18.5-12h80q33 0 56.5 23.5T880-540v20q0 33-23.5 56.5T800-440ZM0-240v-63q0-44 44.5-70.5T160-400q13 0 25 .5t23 2.5q-14 20-21 43t-7 49v65H0Zm240 0v-65q0-65 66.5-105T480-450q108 0 174 40t66 105v65H240Zm560-160q72 0 116 26.5t44 70.5v63H780v-65q0-26-6.5-49T754-397q11-2 22.5-2.5t23.5-.5Z"/></svg>
+                                        Grupos
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <button class="btn_new-book">Novo Livro</button>
+                    </div>
                 </div>
-                <div class="groups-books">CLUBE DO LIVRO</div>
-                <div class="groups-group">GRUPOS</div>
             </div>
 
         </aside>
@@ -215,7 +421,26 @@ main{
         </main>
 
         <div class="notificacoes">
-            notificacoes
+            <div class="notification-content">
+                <h5>ATUALIZAÇOES</h5>
+                <div class="notification-box">
+                    <div class="perfil_photo-notification"></div>
+                    <div class="text-content">
+                        <h6>Louco Escritor</h6>
+                        <p>Escreveu um trecho no grupo...
+                        </p>
+                    </div>
+                </div>
+                <div class="notification-box">
+                    <div class="perfil_photo-notification"></div>
+                </div>
+                <div class="notification-box">
+                    <div class="perfil_photo-notification"></div>
+                </div>
+                <div class="notification-box">
+                    <div class="perfil_photo-notification"></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
