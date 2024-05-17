@@ -105,9 +105,6 @@ aside{
     /* background-color: red; */
     height: calc(100vh - 4.625rem);
 }
-main{
-    /* background-color: green; */
-}
 .notificacoes{
     width: 220px;
     height: calc(100vh - 4.625rem);
@@ -174,11 +171,13 @@ nav ul{
     margin-top: 30px;
 }
 nav ul li{
-    margin-top: 20px;
+    margin-top: 25px;
     margin-left: 10px;
     font-size: 16px;
     font-weight: 500;
     color: var(--cor-color-1);
+}
+nav ul li a{
     display: flex;
     text-align: center;
     align-items: center;
@@ -195,7 +194,17 @@ nav ul li svg{
     font-weight: 600;
     border-radius: 15px;
     margin-top: 40px;
-    place-self: center;
+    transition: all 0.25s ease;
+    &: hover {
+        background-color: var(--cor-fundo-post);
+        color: var(--cor-texto-post);
+        cursor: pointer;
+    }
+    &: active {
+        background-color: var(--cor-texto-post);
+        color: var(--cor-fundo);
+        cursor: pointer;
+    }
 }
 .btn_new-book::before{
     content: "";
@@ -206,6 +215,10 @@ nav ul li svg{
     position: absolute;
     bottom: 50px;
     left: 0px;
+}
+
+.btn_new-book:active{
+
 }
 .notification-content{
     width: 200px;
@@ -252,6 +265,65 @@ nav ul li svg{
 }
 .menus{
     position: relative;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+section{
+
+    max-width: 730px;
+    max-height: 330px;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.sinopse-box{
+    position: relative;
+}
+.sinopse-content{
+    width: 670px;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    background-color: var(--cor-fundo-post);
+    color: var(--cor-color-1);
+}
+
+.texto-writer{
+    margin-top:12px;
+    width: 700px;
+    height: 160px;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--cor-fundo-post);
+    color: var(--cor-color-1);
+}
+.texto-post{
+    margin-top: 12px;
+    width: 670px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: var(--cor-fundo-post);
+    color: var(--cor-color-1);
+}
+.perfil-sinopse{
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background-color: var(--cor-perfis);
+    border: solid 5px var(--cor-fundo);
+    position: absolute;
+
+    top: -38px;
+    left: -50px;
 }
 </style>
 <body>
@@ -342,7 +414,7 @@ nav ul li svg{
                     <div class="menus">
                         <nav>
                             <ul>
-                                <li>
+                                <li class="home-icon">
                                     <a href="#">
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M0 0H18V18H0V0Z" fill="white" fill-opacity="0.01"/>
@@ -393,11 +465,9 @@ nav ul li svg{
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 0.224487H16V16.2245H0V0.224487Z" fill="white" fill-opacity="0.01"/>
-                                            <path d="M2.6665 13.5578C2.6665 12.2245 2.6665 3.5578 2.6665 3.5578C2.6665 2.45323 3.62164 1.5578 4.79984 1.5578H13.3332V12.2245C13.3332 12.2245 6.66034 12.2245 4.79984 12.2245C3.12059 12.2245 2.6665 12.4525 2.6665 13.5578Z" fill="white" fill-opacity="0.01" stroke="#D5D7DC" stroke-width="1.61535" stroke-linejoin="round"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.99984 14.8912H13.3332V12.2245H3.99984C3.26346 12.2245 2.6665 12.8215 2.6665 13.5578C2.6665 14.2942 3.26346 14.8912 3.99984 14.8912Z" stroke="#D5D7DC" stroke-width="1.61535" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#D5D7DC">
+                                            <path d="M480-160q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740v484q51-32 107-48t113-16q36 0 70.5 6t69.5 18v-480q15 5 29.5 10.5T898-752q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59Zm80-200v-380l200-200v400L560-360Z"/>
+                                          </svg>
                                         Clube do Livro
                                     </a>
                                 </li>
@@ -417,7 +487,18 @@ nav ul li svg{
         </aside>
 
         <main>
-            MAIN
+            <section>
+                <div class="sinopse-box">
+                    <div class="perfil-sinopse"></div>
+                    <div class="sinopse-content">
+
+                    </div>
+                </div>
+                <div class="texto-writer">
+
+                </div>
+                <div class="texto-post" >s</div>
+            </section>
         </main>
 
         <div class="notificacoes">
