@@ -97,12 +97,11 @@ height: 4.625rem;
 }
 .container{
     display: grid;
-    grid-template-columns:auto 1fr auto ;
+    grid-template-columns:1fr auto 1fr;
+    gap:80px;
 }
 aside{
-    /* width: 300px; */
-    padding: 0 20px;
-    /* background-color: red; */
+    padding: 0 10px;
     height: calc(100vh - 4.625rem);
 }
 .notificacoes{
@@ -159,7 +158,7 @@ aside{
 .btn-perfil{
     border:none;
     background-color: inherit;
-    padding: 10px 60px;
+    padding: 10px 50px;
     border: solid 1px var(--cor-color-1);
     color: var(--cor-color-1);
     font-weight: 600;
@@ -267,7 +266,9 @@ nav ul li svg{
     position: relative;
 }
 main{
+    /* margin: 0 80px; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 section{
@@ -281,8 +282,9 @@ section{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-bottom: 70px;
 }
-.sinopse-box{
+.sinopse_box{
     position: relative;
 }
 .sinopse-content{
@@ -321,9 +323,31 @@ section{
     background-color: var(--cor-perfis);
     border: solid 5px var(--cor-fundo);
     position: absolute;
-
     top: -38px;
     left: -50px;
+}
+.container_post{
+    margin-bottom: 30px;
+    background-color: blue;
+    min-height: 250px;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    align-self: center;
+}
+.header_post{
+    width: 100%;
+    height: 60px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.perfil_header-post{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--cor-perfis);
 }
 </style>
 <body>
@@ -488,17 +512,23 @@ section{
 
         <main>
             <section>
-                <div class="sinopse-box">
+                <div class="sinopse_box">
                     <div class="perfil-sinopse"></div>
                     <div class="sinopse-content">
-
                     </div>
                 </div>
                 <div class="texto-writer">
 
                 </div>
-                <div class="texto-post" >s</div>
+                <div class="texto-post" ></div>
             </section>
+
+            <div class="container_post">
+                <div class="header_post">
+                    <div class="perfil_header-post"></div>
+                    <h4>Teste dos Santos</h4>
+                </div>
+            </div>
         </main>
 
         <div class="notificacoes">
