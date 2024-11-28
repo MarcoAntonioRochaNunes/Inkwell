@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.bg-fundo-post{
+    background-color: #3A3B3C;
+}
+.text-fundo-post{
+    background-color: #3A3B3C;
+}
+.bg-color1{
+    color: #D5D7DC;
+}
+.text-color1{
+    color: #D5D7DC;
+}
+.bg-fundo-pagina{
+    background-color: #18191A;
+}
+.text-fundo-pagina{
+    color: #18191A;
+}
+.border-fundo-pagina{
+    border: #18191A;
+}
+.text-white{
+    color:#fff
+}
