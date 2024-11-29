@@ -9,15 +9,17 @@
 </template>
 
 <script setup>
-import HeaderView from '@/Components/HeaderView.vue'
+
+import HeaderView from '@/Components/HeaderViewTwo.vue'
 import SidebarView from '@/Components/SidebarView.vue'
+
 </script>
 
 <style>
 .sidebar{
-    height: calc(100vh - 74px);
-    background: green;
-    width: 320px;
-    position: fixed;
+    height:1000px;
+    background:red;
+    /* width: 500px; */
+
 }
 </style>
