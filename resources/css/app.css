@@ -8,7 +8,7 @@
     background-color: #3A3B3C;
 }
 .bg-color1{
-    color: #D5D7DC;
+    background-color: #D5D7DC;
 }
 .text-color1{
     color: #D5D7DC;
@@ -24,4 +24,19 @@
 }
 .text-white{
     color:#fff
+}
+.bg-fundo-blocos-post{
+    background-color: #242526;
+}
+.text-fundo-blocos-post{
+    color:#242526
+}
+.bg-perfis{
+    background-color: #898989;
+}
+.text-perfis{
+    color: #898989;
+}
+.bg-fundo{
+    background-color: #1E1E1E;
 }
