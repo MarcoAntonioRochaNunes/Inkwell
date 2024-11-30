@@ -40,3 +40,9 @@
 .bg-fundo{
     background-color: #1E1E1E;
 }
+.border-fundo{
+    border:4px solid #1E1E1E;
+}
+.placeholder-color1::placeholder{
+    color: #D5D7DC;
+}
