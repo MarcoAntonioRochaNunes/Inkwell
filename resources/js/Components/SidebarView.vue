@@ -11,7 +11,7 @@
     <TransitionRoot as="template" :show="sidebarOpen">
       <Dialog class="relative z-50 lg:hidden" @close="sidebarOpen = false">
         <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
-          <div class="fixed inset-0 bg-gray-900/80" />
+          <div class="fixed inset-0 bg-black/80" />
         </TransitionChild>
 
         <div class="fixed inset-0 flex">
@@ -26,7 +26,7 @@
                 </div>
               </TransitionChild>
               <!-- Sidebar component, swap this element with another sidebar if you like -->
-              <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-2 ring-1 ring-white/10">
+              <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-fundo-pagina px-6 pb-2 ring-1 ring-white/10">
                 <div class="flex h-16 shrink-0 items-center">
                   <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
                 </div>
@@ -35,7 +35,7 @@
                     <li>
                       <ul role="list" class="-mx-2 space-y-1">
                         <li v-for="item in navigation" :key="item.name">
-                          <a :href="item.href" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
+                          <a :href="item.href" :class="[item.current ? 'border border-orange-800 text-orange-500' : 'text-gray-400 hover:bg-orange-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
                             <component :is="item.icon" class="size-6 shrink-0" aria-hidden="true" />
                             {{ item.name }}
                           </a>
@@ -43,13 +43,13 @@
                       </ul>
                     </li>
                     <li>
-                      <div class="text-xs/6 font-semibold text-gray-400">Your teams</div>
+                      <div class="text-xs/6 font-semibold text-gray-400">Grupos</div>
                       <ul role="list" class="-mx-2 mt-2 space-y-1">
                         <li v-for="team in teams" :key="team.name">
-                          <a :href="team.href" :class="[team.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
-                            <span class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">{{ team.initial }}</span>
-                            <span class="truncate">{{ team.name }}</span>
-                          </a>
+                            <a :href="team.href" :class="[team.current ? 'bg-orange-400 text-white' : 'text-gray-400 hover:bg-orange-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
+                                <span class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-orange-700 bg-orange-500 text-[0.625rem] font-medium text-gray-100 group-hover:text-white">{{ team.initial }}</span>
+                                <span class="truncate">{{ team.name }}</span>
+                            </a>
                         </li>
                       </ul>
                     </li>
@@ -65,7 +65,7 @@
     <!-- Static sidebar for desktop -->
     <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
-      <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6">
+      <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-transparent px-6">
         <div class="flex h-16 shrink-0 items-center">
           <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
         </div>
@@ -74,29 +74,47 @@
             <li>
               <ul role="list" class="-mx-2 space-y-1">
                 <li v-for="item in navigation" :key="item.name">
-                  <a :href="item.href" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
+                  <a :href="item.href" :class="[item.current ? 'border border-orange-800 text-orange-500' : 'text-gray-400 hover:bg-orange-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
                     <component :is="item.icon" class="size-6 shrink-0" aria-hidden="true" />
                     {{ item.name }}
                   </a>
                 </li>
               </ul>
+
+                <a href="#" class="mt-7 text-black bg-white hover:bg-gray-200 hover:text-gray-800 group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold">
+                    <component :is="PencilIcon" class="size-6 shrink-0" aria-hidden="true" />
+                    Novo Livro
+                </a>
             </li>
             <li>
-              <div class="text-xs/6 font-semibold text-gray-400">Your teams</div>
+              <div class="text-xs/6 font-semibold text-gray-400">Grupos</div>
               <ul role="list" class="-mx-2 mt-2 space-y-1">
                 <li v-for="team in teams" :key="team.name">
-                  <a :href="team.href" :class="[team.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
-                    <span class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">{{ team.initial }}</span>
+                  <a :href="team.href" :class="[team.current ? 'bg-orange-400 text-white' : 'text-gray-400 hover:bg-orange-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
+                    <span class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-orange-700 bg-orange-500 text-[0.625rem] font-medium text-gray-100 group-hover:text-white">{{ team.initial }}</span>
                     <span class="truncate">{{ team.name }}</span>
                   </a>
                 </li>
               </ul>
+              <a href="#" class="mt-7 text-gray-400 hover:bg-orange-800 hover:text-white group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold">
+                    <component :is="UserGroupIcon" class="size-6 shrink-0" aria-hidden="true" />
+                    Novo Grupo
+                </a>
             </li>
             <li class="-mx-6 mt-auto">
-              <a href="#" class="flex items-center gap-x-4 px-6 py-3 text-sm/6 font-semibold text-white hover:bg-gray-800">
+              <a href="#" class="flex items-center gap-x-4 px-6 py-3 hover:bg-gray-800">
                 <img class="size-8 rounded-full bg-gray-800" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                <span class="sr-only">Your profile</span>
-                <span aria-hidden="true">Tom Cook</span>
+                <div>
+                    <span class="sr-only">Your profile</span>
+                    <div class="flex gap-2">
+                        <span aria-hidden="true" class="text-sm/6 font-semibold text-white">Tom Cook</span>
+                        <span class="text-xs/6 italic text-gray-300">@tomCooking</span>
+                    </div>
+                    <div class="flex text-xs/6 text-gray-300 gap-2 font-semibold">
+                        <p>Seguindo <span class="text-orange-500">600.K</span></p>
+                        <p>Seguidores <span class="text-orange-500">600.M</span></p>
+                    </div>
+                </div>
               </a>
             </li>
           </ul>
@@ -104,7 +122,7 @@
       </div>
     </div>
 
-    <div class="fixed top-0 w-full z-40 flex items-center gap-x-6 bg-gray-800 px-4 py-4 shadow-sm sm:px-6 lg:hidden lg:fixed">
+    <div class="fixed top-0 w-full z-40 flex items-center gap-x-6 bg-fundo-pagina px-4 py-4 shadow-sm sm:px-6 lg:hidden lg:fixed">
       <button type="button" class="-m-2.5 p-2.5 text-gray-400 lg:hidden" @click="sidebarOpen = true">
         <span class="sr-only">Open sidebar</span>
         <Bars3Icon class="size-6" aria-hidden="true" />
@@ -130,15 +148,19 @@ import {
   HomeIcon,
   UsersIcon,
   XMarkIcon,
+  GlobeAltIcon,
+  MagnifyingGlassIcon,
+  BookOpenIcon,
+  PencilIcon,
+  UserGroupIcon,
 } from '@heroicons/vue/24/outline'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-  { name: 'Team', href: '#', icon: UsersIcon, current: false },
-  { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-  { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
+  { name: 'Home', href: '#', icon: HomeIcon, current: true },
+  { name: 'Pesquisa', href: '#', icon: MagnifyingGlassIcon, current: false },
+  { name: 'Explorar', href: '#', icon: GlobeAltIcon, current: false },
+  { name: 'Livros', href: '#', icon: BookOpenIcon, current: false },
+
 ]
 const teams = [
   { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },

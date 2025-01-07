@@ -1,5 +1,5 @@
 <template>
-  <header class="h-[70px] bg-gray-900 teste text-orange-300 flex justify-end">
+  <header class="h-[70px] bg-trasparent bg-fundo-pagina teste text-orange-300 flex justify-end">
 
     <div class="headerCalc flex items-center">
         <div class="container mx-auto">
