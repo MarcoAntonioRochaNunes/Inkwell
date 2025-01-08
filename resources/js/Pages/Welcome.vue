@@ -1,5 +1,5 @@
 <template>
-
+    <ModalPostBook :abrir="open" @close="ControleModal"/>
     <HeaderView />
     <SidebarView />
     <UpdatedsBarVue />
@@ -246,7 +246,7 @@
                                     </div>
                                 </div>
 
-                                <a href="#" class="text-gray-800 bg-white px-5 hover:bg-gray-700 hover:text-white group flex gap-x-3 rounded-md p-2 text-sm font-semibold items-center" v-if="item.capitulo && item.sinopse">
+                                <a href="#" class="text-gray-800 bg-white px-5 hover:bg-gray-700 hover:text-white group flex gap-x-3 rounded-md p-2 text-sm font-semibold items-center" v-if="item.capitulo && item.sinopse"  @click="ControleModal()">
                                     <component :is="EyeIcon" class="size-4 shrink-0" aria-hidden="true" />
                                     Ler
                                 </a>
@@ -261,7 +261,9 @@
 </template>
 
 <script setup>
+
 import HeaderView from "@/Components/HeaderViewTwo.vue";
+import ModalPostBook from "@/Components/ModalPostBook.vue";
 import SidebarView from "@/Components/SidebarView.vue";
 import UpdatedsBarVue from "@/Components/UpdatedsBar.vue";
 import {
@@ -280,7 +282,13 @@ import {
   ChatBubbleOvalLeftIcon,
   EyeIcon,
 } from '@heroicons/vue/16/solid';
+import { ref } from "vue";
 
+    const open = ref(false);
+
+    const ControleModal = () => {
+        open.value = !open.value;
+    }
 
 const posts = [
 
