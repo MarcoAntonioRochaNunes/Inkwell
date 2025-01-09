@@ -13,34 +13,20 @@ defineProps({
         type: String,
     },
 });
+
+import HeaderView from "@/Components/HeaderViewTwo.vue";
+import SidebarView from "@/Components/SidebarView.vue";
+
 </script>
 
 <template>
-    <Head title="Profile" />
+    <Head title="Meu Perfil" />
 
-    <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Profile</h2>
-        </template>
-
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <UpdateProfileInformationForm
-                        :must-verify-email="mustVerifyEmail"
-                        :status="status"
-                        class="max-w-xl"
-                    />
-                </div>
-
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <UpdatePasswordForm class="max-w-xl" />
-                </div>
-
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <DeleteUserForm class="max-w-xl" />
-                </div>
-            </div>
+    <HeaderView />
+    <SidebarView />
+    <main class="xl:px-72 bg-fundo mx-auto container-xl telaTotal marginTela">
+        <div class="h-full flex justify-center bg-red-300">
+            jdaskljdalsk
         </div>
-    </AuthenticatedLayout>
+    </main>
 </template>

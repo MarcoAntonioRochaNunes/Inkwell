@@ -1,5 +1,5 @@
 <template>
-    <ModalPostBook :abrir="open" @close="ControleModal"/>
+    <Head title="Inicio" />
     <HeaderView />
     <SidebarView />
     <UpdatedsBarVue />
@@ -206,15 +206,15 @@
 
                             <!-- Imagem Fim -->
                             <div class="mt-5 mb-10 divide-y text-white">
-                                <p class="mb-3">
-                                    Chamem-me de Ismael. Alguns anos atrás - não
-                                    importa exatamente quanto tempo tendo pouco
-                                    ou nenhum dinheiro na minha bolsa e nada em
-                                    particular para me interessar em terra,
-                                    pensei que navegaria um pouco e veria a
-                                    parte aquática do mundo.
+                                <p class="mb-3" v-if="item.sinopse && item.capitulo">
+                                    {{ item.sinopse }}
                                 </p>
-
+                                <p class="mb-3" v-if="item.sinopse && !item.capitulo">
+                                    {{ item.sinopse }}
+                                </p>
+                                <p class="mb-3" v-if="item.capitulo && !item.sinopse">
+                                    {{ item.capitulo }}
+                                </p>
                             </div>
 
                             <div class="flex justify-between">
@@ -246,7 +246,7 @@
                                     </div>
                                 </div>
 
-                                <button  class="text-gray-800 bg-white px-5 hover:bg-gray-700 hover:text-white group flex gap-x-3 rounded-md p-2 text-sm font-semibold items-center" v-if="item.capitulo && item.sinopse"  @click="ControleModal()">
+                                <button  class="text-gray-800 bg-white px-5 hover:bg-gray-700 hover:text-white group flex gap-x-3 rounded-md p-2 text-sm font-semibold items-center" v-if="item.capitulo && item.sinopse"  @click="ControleModal(), abrirModal(item)" >
                                     <component :is="EyeIcon" class="size-4 shrink-0" aria-hidden="true" />
                                     Ler
                                 </button>
@@ -258,6 +258,7 @@
             </div>
         </div>
     </main>
+    <ModalPostBook :abrir="open" :item="itemPost" @close="ControleModal"/>
 </template>
 
 <script setup>
@@ -285,10 +286,16 @@ import {
 import { ref } from "vue";
 
     const open = ref(false);
+    const itemPost = ref({});
 
     const ControleModal = () => {
         open.value = !open.value;
     }
+
+    const abrirModal = (item) => {
+        itemPost.value = item;
+        open.value = true;
+    };
 
 const posts = [
 
