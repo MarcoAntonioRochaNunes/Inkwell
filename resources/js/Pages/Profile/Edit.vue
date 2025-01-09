@@ -24,9 +24,29 @@ import SidebarView from "@/Components/SidebarView.vue";
 
     <HeaderView />
     <SidebarView />
-    <main class="xl:px-72 bg-fundo mx-auto container-xl telaTotal marginTela">
+    <main class="xl:pl-72 bg-fundo mx-auto container-xl telaTotal marginTela">
         <div class="h-full flex justify-center bg-red-300">
-            jdaskljdalsk
+
+            <div class="mt-28 mb-28">
+                <div class="flex items-center gap-2">
+                    <div class="grid justify-items-end text-base font-semibold">
+                        <span>26000</span>
+                        <span>Seguidores</span>
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-black m-3"></div>
+                    <div class="grid text-base font-semibold">
+                        <span>26000</span>
+                        <span>Seguidores</span>
+                    </div>
+                </div>
+
+                <div class="grid justify-items-center font-semibold gap-2 text-xl">
+                    Marco Antonio
+                    <span class="text-xs">@MarcoAntonio</span>
+                </div>
+
+            </div>
+
         </div>
     </main>
 </template>
