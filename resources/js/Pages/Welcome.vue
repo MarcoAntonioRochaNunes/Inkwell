@@ -246,10 +246,10 @@
                                     </div>
                                 </div>
 
-                                <a href="#" class="text-gray-800 bg-white px-5 hover:bg-gray-700 hover:text-white group flex gap-x-3 rounded-md p-2 text-sm font-semibold items-center" v-if="item.capitulo && item.sinopse"  @click="ControleModal()">
+                                <button  class="text-gray-800 bg-white px-5 hover:bg-gray-700 hover:text-white group flex gap-x-3 rounded-md p-2 text-sm font-semibold items-center" v-if="item.capitulo && item.sinopse"  @click="ControleModal()">
                                     <component :is="EyeIcon" class="size-4 shrink-0" aria-hidden="true" />
                                     Ler
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
