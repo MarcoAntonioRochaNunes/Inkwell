@@ -49,3 +49,15 @@
 .cor-texto74{
     color: #747474;
 }
+.bitter-500 {
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+.bitter-500-italic {
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+  }

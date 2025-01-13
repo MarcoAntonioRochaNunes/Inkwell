@@ -14,7 +14,7 @@ defineProps({
         type: String,
     },
 });
-const activeTab = ref('feed');
+const activeTab = ref('sobre');
 import HeaderView from "@/Components/HeaderViewTwo.vue";
 import SidebarView from "@/Components/SidebarView.vue";
 import FeedPerfil from '@/Components/FeedPerfil.vue';
@@ -30,7 +30,7 @@ import { ref } from 'vue';
 
     <HeaderView />
     <SidebarView />
-    <main class="xl:pl-72 bg-fundo mx-auto container-xl telaTotal marginTela">
+    <main class="xl:pl-72 bg-fundo mx-auto container-xl telaTotal marginTela blocoTela">
         <div class="h-full grid justify-center">
             <!-- Topo do pefil -->
             <div class="mt-28 mb-28 cor-texto74">
@@ -66,37 +66,31 @@ import { ref } from 'vue';
             <!-- Topo do pefil -->
 
         </div>
-        <div class="text-green-600 px-20">
+        <div class=" px-20">
             <div class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
                 <ul class="flex flex-wrap -mb-px">
-                    <li class="me-2">
-                        <a href="#" @click="activeTab = 'feed'" :class="{'dark:text-white dark:border-orange-500': activeTab === 'feed'}" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-white">Feed</a>
-                    </li>
                     <li class="me-2">
                         <a href="#" @click="activeTab = 'sobre'" :class="{'dark:text-white dark:border-orange-500': activeTab === 'sobre'}" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-white">Sobre</a>
                     </li>
                     <li class="me-2">
-                        <a href="#" @click="activeTab = 'obras'" :class="{'dark:text-white dark:border-orange-500': activeTab === 'obras'}" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-white">Obras</a>
+                        <a href="#" @click="activeTab = 'feed'" :class="{'dark:text-white dark:border-orange-500': activeTab === 'feed'}" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-white">Feed</a>
                     </li>
                     <li class="me-2">
-                        <a href="#" @click="activeTab = 'seguidores'" :class="{'dark:text-white dark:border-orange-500': activeTab === 'seguidores'}" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-white">Seguidores</a>
+                        <a href="#" @click="activeTab = 'obras'" :class="{'dark:text-white dark:border-orange-500': activeTab === 'obras'}" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-white">Obras</a>
                     </li>
                 </ul>
             </div>
 
             <!-- Conteudo -->
-            <div>
-                <div v-if="activeTab === 'feed'">
-                    <FeedPerfil />
-                </div>
+            <div class="min-h-[880px]">
                 <div v-if="activeTab === 'sobre'">
                     <SobrePerfil />
                 </div>
+                <div v-if="activeTab === 'feed'">
+                    <FeedPerfil />
+                </div>
                 <div v-if="activeTab === 'obras'">
                     <ObrasPerfil />
-                </div>
-                <div v-if="activeTab === 'seguidores'">
-                    <SeguidoresPerfil />
                 </div>
             </div>
             <!-- Conteudo -->
