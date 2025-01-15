@@ -7,16 +7,16 @@
                     <span>"Escritor de fantasia e ficção científica. Sonhador apaixonado por criar mundos."</span>
                 </div>
                 <div class="flex justify-center gap-3 py-5">
-                    <div class="font-semibold bg-fundo-pagina grid justify-items-center p-3 rounded-md text-xl">
-                        <span class="text-orange-500">10</span>
+                    <div class="font-semibold bg-fundo-pagina grid justify-items-center p-3 rounded-md text-sm ">
+                        <span class="text-orange-500 text-xl">10</span>
                         Obras Escritas
                     </div>
-                    <div class="font-semibold bg-fundo-pagina grid justify-items-center p-3 rounded-md text-xl">
-                        <span class="text-orange-500">10</span>
+                    <div class="font-semibold bg-fundo-pagina grid justify-items-center p-3 rounded-md text-sm ">
+                        <span class="text-orange-500 text-xl">10</span>
                         Obras Lidas
                     </div>
-                    <div class="font-semibold bg-fundo-pagina grid justify-items-center p-3 rounded-md text-xl">
-                        <span class="text-orange-500">10</span>
+                    <div class="font-semibold bg-fundo-pagina grid justify-items-center p-3 rounded-md text-sm ">
+                        <span class="text-orange-500 text-xl">10</span>
                         Reações
                     </div>
                 </div>

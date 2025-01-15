@@ -51,17 +51,6 @@ import { ref } from 'vue';
                     <span class="text-xs italic">@MarcoAntonio</span>
                 </div>
 
-                <div class="grid grid-cols-2 gap-2 mt-5 font-bold">
-                    <div class="grid justify-items-center">
-                        <span class="text-orange-500">36</span>
-                        <span>Obras</span>
-                    </div>
-                    <div class="grid justify-items-center">
-                        <span class="text-orange-500">10</span>
-                        <span>Obras Lidas</span>
-                    </div>
-                </div>
-
             </div>
             <!-- Topo do pefil -->
 
