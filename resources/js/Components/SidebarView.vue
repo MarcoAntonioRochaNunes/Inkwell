@@ -169,7 +169,7 @@ import {
 } from '@heroicons/vue/24/outline'
 
 const navigation = [
-  { name: 'Home', href: '#', icon: HomeIcon, current: true },
+  { name: 'Home', href: '/', icon: HomeIcon, current: true },
   { name: 'Pesquisa', href: '#', icon: MagnifyingGlassIcon, current: false },
   { name: 'Explorar', href: '#', icon: GlobeAltIcon, current: false },
   { name: 'Livros', href: '#', icon: BookOpenIcon, current: false },
